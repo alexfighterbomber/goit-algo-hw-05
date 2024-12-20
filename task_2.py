@@ -7,9 +7,10 @@ def generator_numbers(text: str):    # знаходить дійсні числ�
         yield float(num)  # генератор повертає числа по одному
 
 
-def sum_profit(text: str, func: Callable[[str], float]):
-    return sum(func(text))
+def sum_profit(text: str, gen_num: Callable[[str], float]):
+    return sum(gen_num(text))
 
 text = "Загальний дохід працівника складається з декількох частин: 1000.01 як основний дохід, доповнений додатковими надходженнями 27.45 і 324.00 доларів."
 total_income = sum_profit(text, generator_numbers)
+
 print(f"Загальний дохід: {total_income}")
