@@ -2,7 +2,7 @@ from typing import Callable
 import re
 
 def generator_numbers(text: str):    # знаходить дійсні числа в тексті
-    pattern = r'\d+\.\d+'  # регулярний вираз для пошуку дійсних чисел  '-?\d+(?:\.\d+)?'
+    pattern = r' \d+\.\d+ '  # регулярний вираз для пошуку дійсних чисел  '-?\d+(?:\.\d+)?'
     for num in re.findall(pattern, text):
         yield float(num)  # генератор повертає числа по одному
 
